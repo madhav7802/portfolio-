@@ -10,7 +10,7 @@ import SplashCursor from "@/components/SplashCursor";
 
 // InfiniteMenu uses canvas/gl-matrix, which relies on window/document.
 // We must dynamically import it with ssr: false to prevent hydration errors.
-const InfiniteMenu = dynamic(() => import("@/components/InfiniteMenu"), {
+const InfiniteMenu = dynamic<any>(() => import("@/components/InfiniteMenu"), {
   ssr: false,
   loading: () => (
     <div className="w-full h-full flex items-center justify-center text-base-400">
