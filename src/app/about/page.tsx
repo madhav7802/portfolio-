@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "motion/react";
 import { portfolioData } from "@/data/config";
 import BorderGlow from "@/components/BorderGlow";
@@ -94,9 +95,11 @@ export default function AboutPage() {
                 >
                   <div className="bg-base-900/40 backdrop-blur-sm border border-base-800/50 p-6 md:p-10 flex flex-col md:flex-row gap-8 items-center">
                     <div className="w-full md:w-1/2">
-                      <img 
+                      <Image 
                         src={hack.image} 
-                        alt={hack.title} 
+                        alt={hack.title}
+                        width={800}
+                        height={450} 
                         className="w-full h-auto border border-base-800/50 shadow-2xl shadow-accent-500/10"
                       />
                     </div>
@@ -149,10 +152,11 @@ export default function AboutPage() {
                   >
                     <div className="bg-base-900/40 backdrop-blur-sm border border-base-800/50 flex flex-col h-full overflow-hidden group">
                       <div className="relative h-48 w-full overflow-hidden">
-                        <img 
+                        <Image 
                           src={project.image} 
                           alt={project.title} 
-                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                          fill
+                          className="object-cover transition-transform duration-700 group-hover:scale-105"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-base-900 to-transparent opacity-80" />
                       </div>
