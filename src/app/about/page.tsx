@@ -50,15 +50,6 @@ export default function AboutPage() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="mb-24 text-center"
         >
-          <div className="flex justify-center mb-10">
-            <div className="relative w-40 h-40 md:w-56 md:h-56 rounded-full overflow-hidden border border-accent-500/50 shadow-[0_0_40px_-10px_#c084fc]">
-              <img 
-                src="/profile-headshot.jpg" 
-                alt="Ojasvi Bhardwaj" 
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </div>
           <h1 className="text-4xl md:text-6xl font-heading font-black tracking-tight text-white mb-6 uppercase">
             About <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-400 to-accent-600">Me</span>
           </h1>
