@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
+
+  /* Restrained color palette - Dark neutral base */
+  --color-base-50: #fafafa;
+  --color-base-100: #f4f4f5;
+  --color-base-200: #e4e4e7;
+  --color-base-300: #d4d4d8;
+  --color-base-400: #a1a1aa;
+  --color-base-500: #71717a;
+  --color-base-600: #52525b;
+  --color-base-700: #3f3f46;
+  --color-base-800: #27272a;
+  --color-base-900: #18181b;
+  --color-base-950: #09090b;
+
+  /* Accent color - Electric Indigo/Violet */
+  --color-accent-50: #f5f3ff;
+  --color-accent-100: #ede9fe;
+  --color-accent-200: #ddd6fe;
+  --color-accent-300: #c4b5fd;
+  --color-accent-400: #a78bfa;
+  --color-accent-500: #8b5cf6;
+  --color-accent-600: #7c3aed;
+  --color-accent-700: #6d28d9;
+  --color-accent-800: #5b21b6;
+  --color-accent-900: #4c1d95;
+  --color-accent-950: #2e1065;
+}
+
+@layer base {
+  body {
+    @apply bg-base-950 text-base-200;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading text-base-50 tracking-tight;
+  }
+}
