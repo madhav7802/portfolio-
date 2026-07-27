@@ -7,12 +7,9 @@ export default function Hero({ onDiscover }: { onDiscover?: () => void }) {
     <section className="relative w-full h-screen overflow-hidden bg-black text-white">
       {/* Background Spline 3D Model (via iframe to prevent WASM panic) */}
       <div 
-        className="absolute z-0 pointer-events-auto" 
+        className="absolute inset-0 z-0 pointer-events-auto" 
         style={{ 
-          width: 'calc(100% + 300px)', 
-          height: 'calc(100% + 150px)', 
-          left: '-150px', 
-          top: '-75px' 
+          clipPath: 'polygon(0 0, 100% 0, 100% calc(100% - 60px), calc(100% - 160px) calc(100% - 60px), calc(100% - 160px) 100%, 0 100%)'
         }}
       >
         <iframe 
