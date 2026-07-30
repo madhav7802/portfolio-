@@ -55,4 +55,8 @@ export const portfolioData: PortfolioData = {
       tags: ["React", "Storybook", "Framer Motion"],
     },
   ],
+  hackathons: [],
+  skills: [],
+  career: [],
+  achievements: [],
 };
