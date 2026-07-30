@@ -16,6 +16,7 @@ export interface PortfolioData {
   linkedin: string;
   projects: Project[];
   hackathons?: any[];
+  skills?: any[];
 }
 
 export const portfolioData: PortfolioData = {
