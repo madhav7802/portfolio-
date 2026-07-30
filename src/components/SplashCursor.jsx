@@ -1068,7 +1068,7 @@ function SplashCursor({
       window.removeEventListener('touchend', handleTouchEnd);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isMobile, config.SIM_RESOLUTION, config.DYE_RESOLUTION, config.CAPTURE_RESOLUTION, config.DENSITY_DISSIPATION, config.VELOCITY_DISSIPATION, config.PRESSURE, config.PRESSURE_ITERATIONS, config.CURL, config.SPLAT_RADIUS, config.SPLAT_FORCE, config.SHADING, config.COLOR_UPDATE_SPEED, config.BACK_COLOR, config.TRANSPARENT, config.RAINBOW_MODE, config.COLOR]);
+  }, [isMobile, SIM_RESOLUTION, DYE_RESOLUTION, CAPTURE_RESOLUTION, DENSITY_DISSIPATION, VELOCITY_DISSIPATION, PRESSURE, PRESSURE_ITERATIONS, CURL, SPLAT_RADIUS, SPLAT_FORCE, SHADING, COLOR_UPDATE_SPEED, BACK_COLOR, TRANSPARENT, RAINBOW_MODE, COLOR]);
 
   if (isMobile) return null;
 
