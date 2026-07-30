@@ -1,5 +1,5 @@
 'use client';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 function SplashCursor({
   SIM_RESOLUTION = 64,
@@ -21,8 +21,19 @@ function SplashCursor({
 }) {
   const canvasRef = useRef(null);
   const animationFrameId = useRef(null);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768 || ('ontouchstart' in window) || navigator.maxTouchPoints > 0);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  useEffect(() => {
+    if (isMobile) return;
     const canvas = canvasRef.current;
     if (!canvas) return;
 
@@ -1057,7 +1068,9 @@ function SplashCursor({
       window.removeEventListener('touchend', handleTouchEnd);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [isMobile, config.SIM_RESOLUTION, config.DYE_RESOLUTION, config.CAPTURE_RESOLUTION, config.DENSITY_DISSIPATION, config.VELOCITY_DISSIPATION, config.PRESSURE, config.PRESSURE_ITERATIONS, config.CURL, config.SPLAT_RADIUS, config.SPLAT_FORCE, config.SHADING, config.COLOR_UPDATE_SPEED, config.BACK_COLOR, config.TRANSPARENT, config.RAINBOW_MODE, config.COLOR]);
+
+  if (isMobile) return null;
 
   return (
     <div
