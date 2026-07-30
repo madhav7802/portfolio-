@@ -15,9 +15,9 @@ export interface PortfolioData {
   github: string;
   linkedin: string;
   projects: Project[];
-  hackathons?: any[];
-  skills?: { category: string; items: string[] }[];
-  career?: any[];
+  hackathons: any[];
+  skills: { category: string; items: string[] }[];
+  career: any[];
 }
 
 export const portfolioData: PortfolioData = {
