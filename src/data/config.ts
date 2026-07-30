@@ -18,6 +18,7 @@ export interface PortfolioData {
   hackathons: any[];
   skills: { category: string; items: string[] }[];
   career: { technologies: string[]; [key: string]: any }[];
+  [key: string]: any;
 }
 
 export const portfolioData: PortfolioData = {
