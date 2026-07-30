@@ -17,6 +17,7 @@ export interface PortfolioData {
   projects: Project[];
   hackathons?: any[];
   skills?: { category: string; items: string[] }[];
+  career?: any[];
 }
 
 export const portfolioData: PortfolioData = {
