@@ -1,8 +1,21 @@
+"use client";
+
+import { useState, useEffect } from "react";
 import { portfolioData } from "@/data/config";
 import BorderGlow from "@/components/BorderGlow";
 import TrueFocus from "@/components/TrueFocus";
 
 export default function Hero({ onDiscover }: { onDiscover?: () => void }) {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768 || ('ontouchstart' in window));
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
   return (
     <section className="relative w-full h-screen overflow-hidden bg-black text-white">
       {/* Background Spline 3D Model (via iframe to prevent WASM panic) */}
@@ -12,14 +25,18 @@ export default function Hero({ onDiscover }: { onDiscover?: () => void }) {
           clipPath: 'polygon(0 0, 100% 0, 100% calc(100% - 60px), calc(100% - 160px) calc(100% - 60px), calc(100% - 160px) 100%, 0 100%)'
         }}
       >
-        <iframe 
-          key="spline-hero-qBDdiOfrW1PVwPlvuqgYqxDR-Egb"
-          src="https://my.spline.design/theeternalarc-qBDdiOfrW1PVwPlvuqgYqxDR-Egb/" 
-          frameBorder="0" 
-          width="100%" 
-          height="100%" 
-          style={{ border: 'none', background: 'transparent' }}
-        />
+        {isMobile ? (
+          <div className="w-full h-full bg-gradient-to-br from-base-900 to-black" />
+        ) : (
+          <iframe 
+            key="spline-hero-qBDdiOfrW1PVwPlvuqgYqxDR-Egb"
+            src="https://my.spline.design/theeternalarc-qBDdiOfrW1PVwPlvuqgYqxDR-Egb/" 
+            frameBorder="0" 
+            width="100%" 
+            height="100%" 
+            style={{ border: 'none', background: 'transparent' }}
+          />
+        )}
       </div>
 
       {/* Animated Portfolio Name (TrueFocus) */}
